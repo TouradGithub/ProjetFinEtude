@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/admin/login', [AdminController::class, 'getLogin'])->name('getLogin');
 Route::get('/admin/logout', [AdminController::class, 'logout'])->name('logoutAdmin');
 Route::post('/loginAdmin', [AdminController::class, 'login'])->name('loginstore');
-// Route::get('/frontregister', [FrontController::class, 'login'])->name('frontregister');
 
     Route::prefix('fammes')->group(function () {
 
@@ -27,21 +26,10 @@ Route::post('/loginAdmin', [AdminController::class, 'login'])->name('loginstore'
 
 
 
-    Route::get('/', [FrontController::class, 'index'])->name('frontlogin');
-// Route::prefix('adm')->middleware('auth')->group(function () {
-//     Route::get('/home', function () {
-//         return view('home');
-//     });
-    // Route::resource('femmes','FemmesController');
-// });
+    Route::get('/', [FrontController::class, 'index'])->name('front.index');
+    Route::get('/login', [FrontController::class, 'getlogin'])->name('front.getlogin');
+    Route::post('/login', [FrontController::class, 'login'])->name('front.login');
+    Route::post('/register', [FrontController::class, 'register'])->name('front.register');
+    Route::get('/register', [FrontController::class, 'getRegister'])->name('front.getRegister');
+    Route::get('/logout', [FrontController::class, 'logout'])->name('front.logout');
 
-// Route::prefix('')->middleware('auth')->group(function () {
-//     Route::get('/logout', function () {
-//         return view('login');
-//     });
-// });
-// Route::prefix('admin')->middleware('auth')->group(function () {
-//     Route::get('/login', function () {
-//         return view('login');
-//     });
-// });

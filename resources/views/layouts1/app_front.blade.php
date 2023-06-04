@@ -1,157 +1,599 @@
 @php
-
+    $femmes=App\Models\Femme::all();
 @endphp
-<!doctype html>
-<html lang="ar" dir="rtl">
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-    <link rel="stylesheet" type="text/css" href="https://nafezly.com/css/cust-fonts.css">
-    <link rel="stylesheet" type="text/css" href="https://nafezly.com/css/fontawsome.min.css">
-    <link rel="stylesheet" type="text/css" href="https://nafezly.com/css/responsive-font.css">
-
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.rtl.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
-    <style type="text/css">
-        *{
-          direction: rtl;
-          text-decoration: none!important;
-        }
-        p{
-          display: inline-block;
-
-        }
-        .main-box-styles {
-            background: #fff;
-            width: 100%;
-            box-shadow: 0px 0px 10px #ddd;
-        }
-        .menu-link.active .menu-div{
-            background: #2196f3!important;
-            color: #fff!important;
-        }
-        .menu-link:not(.active):hover .menu-div{
-          background:  #18D535!important;
-        }
-        .row{
-          margin: 0px;
-        }
-        .main{
-          opacity: 0;
-          min-height: 60vh;
-        }
-        .optimize-fonts *{
-          font-family: 'naskh',sans-serif!important;
-        }
-        .optimize-fonts * {
-          line-height: 1.9;
-        }
-        .optimize-fonts img{
-          cursor: pointer;
-          text-align: center!important;
-          display: inline-block;
-        }
-
-        .optimize-fonts blockquote ,.optimize-fonts blockquote *{
-          text-align: center;
-        }
-
-        .optimize-fonts a{
-          color: #2196f3;
-        }
-        .optimize-fonts a.btn{
-          color: #fff;
-        }
-        .optimize-fonts ,
-        .optimize-fonts h1,
-        .optimize-fonts h2,
-        .optimize-fonts h3,
-        .optimize-fonts h4,
-        .optimize-fonts h5,
-        .optimize-fonts h6,
-        .optimize-fonts h1 *,
-        .optimize-fonts h2 *,
-        .optimize-fonts h3 *,
-        .optimize-fonts h4 *,
-        .optimize-fonts h5 *,
-        .optimize-fonts h6 *{
-          font-family: 'kufi-arabic',sans-serif!important;
-        }
-        a{
-          color: #333;
-        }
-        .fancybox__container , .fancybox__container *{
-          direction: ltr;
-        }
-    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zeta admin is super flexible, powerful, clean &amp; modern responsive bootstrap 5 admin template with unlimited possibilities.">
+    <meta name="keywords" content="admin template, Zeta admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="author" content="pixelstrap">
+    <link rel="icon" href="{{asset('frontassets/assets/images/logo/favicon-icon.png')}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('frontassets/assets/images/logo/favicon-icon.png')}}" type="image/x-icon">
+    <title>Zeta admin dashboard </title>
+    <!-- Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{asset('frontassets/assets/css/vendors/font-awesome.css')}}">
+    <!-- ico-font-->
+    <link rel="stylesheet" type="text/css" href="{{asset('frontassets/assets/css/vendors/icofont.css')}}">
+    <!-- Themify icon-->
+    <link rel="stylesheet" type="text/css" href="{{asset('frontassets/assets/css/vendors/themify.css')}}">
+    <!-- Flag icon-->
+    <link rel="stylesheet" type="text/css" href="{{asset('frontassets/assets/css/vendors/flag-icon.css')}}">
+    <!-- Feather icon-->
+    <link rel="stylesheet" type="text/css" href="{{asset('frontassets/assets/css/vendors/feather-icon.css')}}">
+    <!-- Plugins css start-->
+    <link rel="stylesheet" type="text/css" href="{{asset('frontassets/assets/css/vendors/scrollbar.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('frontassets/assets/css/vendors/select2.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('frontassets/assets/css/vendors/owlcarousel.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('frontassets/assets/css/vendors/range-slider.css')}}">
+    <!-- Plugins css Ends-->
+    <!-- Bootstrap css-->
+    <link rel="stylesheet" type="text/css" href="{{asset('frontassets/assets/css/vendors/bootstrap.css')}}">
+    <!-- App css-->
+    <link rel="stylesheet" type="text/css" href="{{asset('frontassets/assets/css/style.css')}}">
+    <link id="color" rel="stylesheet" href="{{asset('frontassets/assets/css/color-1.css')}}" media="screen">
+    <!-- Responsive css-->
+    <link rel="stylesheet" type="text/css" href="{{asset('frontassets/assets/css/responsive.css')}}">
   </head>
   <body>
+    <!-- tap on top starts-->
+    <div class="tap-top"><i data-feather="chevrons-up"></i></div>
+    <!-- tap on tap ends-->
+    <!-- page-wrapper Start-->
+    <div class="page-wrapper compact-wrapper" id="pageWrapper">
+      <!-- Page Header Start-->
+      <div class="page-header">
+        <div class="header-wrapper row m-0">
+          <div class="header-logo-wrapper col-auto p-0">
+            <div class="logo-wrapper"><a href="index.html"><img class="img-fluid" src="{{asset('frontassets/assets/images/logo/logo.png')}} alt=""></a></div>
+            <div class="toggle-sidebar">
+              <div class="status_toggle sidebar-toggle d-flex">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g>
+                    <g>
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M21.0003 6.6738C21.0003 8.7024 19.3551 10.3476 17.3265 10.3476C15.2979 10.3476 13.6536 8.7024 13.6536 6.6738C13.6536 4.6452 15.2979 3 17.3265 3C19.3551 3 21.0003 4.6452 21.0003 6.6738Z" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M10.3467 6.6738C10.3467 8.7024 8.7024 10.3476 6.6729 10.3476C4.6452 10.3476 3 8.7024 3 6.6738C3 4.6452 4.6452 3 6.6729 3C8.7024 3 10.3467 4.6452 10.3467 6.6738Z" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M21.0003 17.2619C21.0003 19.2905 19.3551 20.9348 17.3265 20.9348C15.2979 20.9348 13.6536 19.2905 13.6536 17.2619C13.6536 15.2333 15.2979 13.5881 17.3265 13.5881C19.3551 13.5881 21.0003 15.2333 21.0003 17.2619Z" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M10.3467 17.2619C10.3467 19.2905 8.7024 20.9348 6.6729 20.9348C4.6452 20.9348 3 19.2905 3 17.2619C3 15.2333 4.6452 13.5881 6.6729 13.5881C8.7024 13.5881 10.3467 15.2333 10.3467 17.2619Z" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="left-side-header col ps-0 d-none d-md-block">
+            <div class="input-group"><span class="input-group-text" id="basic-addon1">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g>
+                    <g>
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M11.2753 2.71436C16.0029 2.71436 19.8363 6.54674 19.8363 11.2753C19.8363 16.0039 16.0029 19.8363 11.2753 19.8363C6.54674 19.8363 2.71436 16.0039 2.71436 11.2753C2.71436 6.54674 6.54674 2.71436 11.2753 2.71436Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M19.8987 18.4878C20.6778 18.4878 21.3092 19.1202 21.3092 19.8983C21.3092 20.6783 20.6778 21.3097 19.8987 21.3097C19.1197 21.3097 18.4873 20.6783 18.4873 19.8983C18.4873 19.1202 19.1197 18.4878 19.8987 18.4878Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                  </g>
+                </svg></span>
+              <input class="form-control" type="text" placeholder="Search here.." aria-label="search" aria-describedby="basic-addon1">
+            </div>
+          </div>
+          <div class="nav-right col-10 col-sm-6 pull-right right-header p-0">
+            <ul class="nav-menus">
 
-    @if($errors->any())
-    <div class="col-12" style="position: absolute;top: 80px;left: 10px;">
-        {!! implode('', $errors->all('<div class="alert-click-hide alert alert-danger alert alert-danger col-9 col-xl-3 rounded-0 mb-1" style="position: fixed!important;z-index: 11;opacity:.9;left:25px;cursor:pointer;" onclick="$(this).fadeOut();">:message</div>')) !!}
+
+                <li class="onhover-dropdown">
+                    <div class="notification-box">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g>
+                          <g>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.9961 2.51416C7.56185 2.51416 5.63519 6.5294 5.63519 9.18368C5.63519 11.1675 5.92281 10.5837 4.82471 13.0037C3.48376 16.4523 8.87614 17.8618 11.9961 17.8618C15.1152 17.8618 20.5076 16.4523 19.1676 13.0037C18.0695 10.5837 18.3571 11.1675 18.3571 9.18368C18.3571 6.5294 16.4295 2.51416 11.9961 2.51416Z" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M14.306 20.5122C13.0117 21.9579 10.9927 21.9751 9.68604 20.5122" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                          </g>
+                        </g>
+                      </svg><span class="badge rounded-pill badge-warning">4 </span>
+                    </div>
+
+                  </li>
+
+              <li class="onhover-dropdown">
+                @guest
+
+                // The user is not login...
+
+
+<a href="{{ route('front.getlogin') }}"><button>register</button></a>
+@endguest
+              </li>
+              <li class="maximize"><a class="text-dark" href="#!" onclick="javascript:toggleFullScreen()">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g>
+                      <g>
+                        <path d="M2.99609 8.71995C3.56609 5.23995 5.28609 3.51995 8.76609 2.94995" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M8.76616 20.99C5.28616 20.41 3.56616 18.7 2.99616 15.22L2.99516 15.224C2.87416 14.504 2.80516 13.694 2.78516 12.804" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M21.2446 12.804C21.2246 13.694 21.1546 14.504 21.0346 15.224L21.0366 15.22C20.4656 18.7 18.7456 20.41 15.2656 20.99" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M15.2661 2.94995C18.7461 3.51995 20.4661 5.23995 21.0361 8.71995" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </g>
+                    </g>
+                  </svg></a></li>
+              <li class="profile-nav onhover-dropdown pe-0 py-0 me-0">
+                <div class="media profile-media">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g>
+                      <g>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.55851 21.4562C5.88651 21.4562 2.74951 20.9012 2.74951 18.6772C2.74951 16.4532 5.86651 14.4492 9.55851 14.4492C13.2305 14.4492 16.3665 16.4342 16.3665 18.6572C16.3665 20.8802 13.2505 21.4562 9.55851 21.4562Z" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.55849 11.2776C11.9685 11.2776 13.9225 9.32356 13.9225 6.91356C13.9225 4.50356 11.9685 2.54956 9.55849 2.54956C7.14849 2.54956 5.19449 4.50356 5.19449 6.91356C5.18549 9.31556 7.12649 11.2696 9.52749 11.2776H9.55849Z" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M16.8013 10.0789C18.2043 9.70388 19.2383 8.42488 19.2383 6.90288C19.2393 5.31488 18.1123 3.98888 16.6143 3.68188" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M17.4608 13.6536C19.4488 13.6536 21.1468 15.0016 21.1468 16.2046C21.1468 16.9136 20.5618 17.6416 19.6718 17.8506" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </g>
+                    </g>
+                  </svg>
+                </div>
+                @auth
+                <ul class="profile-dropdown onhover-show-div">
+                    <li><a href="{{ route('front.logout') }}"><i data-feather="log-in"> </i><span> Deconexion</span></a></li>
+                </ul>
+                @endauth
+
+              </li>
+            </ul>
+          </div>
+          <script class="result-template" type="text/x-handlebars-template">
+            <div class="ProfileCard u-cf">
+            <div class="ProfileCard-avatar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-airplay m-0"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"></path><polygon points="12 15 17 21 7 21 12 15"></polygon></svg></div>
+            <div class="ProfileCard-details">
+            <div class="ProfileCard-realName">slkflk</div>
+            </div>
+            </div>
+          </script>
+          <script class="empty-template" type="text/x-handlebars-template"><div class="EmptyMessage">Your search turned up 0 results. This most likely means the backend is down, yikes!</div></script>
+        </div>
       </div>
-    @endif
 
-
-    <div class="col-12 p-0">
-      <div class="container px-2 py-5 p-md-5 my-0 my-md-5 ">
-
-
-
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item ">
-                  <a class="nav-link" href="{{ route('frontlogin') }}">Login </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{{ route('frontregister') }}">SinUp</a>
-                </li>
-
-              </ul>
-
+        <div class="page-body">
+          <div class="container-fluid">
+            <br><br><br><br>
+            <div class="page-title">
+              <div class="row">
+                <div class="col-12 col-sm-6">
+                  <h3>Femmes</h3>
+                </div>
+                <div class="col-12 col-sm-6">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">                                       <i data-feather="home"></i></a></li>
+                    <li class="breadcrumb-item"></li>
+                    <li class="breadcrumb-item active">Menage</li>
+                  </ol>
+                </div>
+              </div>
             </div>
-          </nav>
+          </div>
+          <!-- Container-fluid starts-->
+          <div class="container-fluid product-wrapper">
+            <div class="product-grid">
+              <div class="feature-products">
+                <div class="row m-b-10">
+                  <div class="col-md-3 col-sm-2 products-total">
+                    <div class="square-product-setting d-inline-block"><a class="icon-grid grid-layout-view" href="javascript:void(0)" data-original-title="" title=""><i data-feather="grid"></i></a></div>
+                    <div class="square-product-setting d-inline-block"><a class="icon-grid m-0 list-layout-view" href="javascript:void(0)" data-original-title="" title=""><i data-feather="list"></i></a></div>
+                    <div class="d-none-productlist filter-toggle">
+                      <h6 class="mb-0">Filters<span class="ms-2"><i class="toggle-data" data-feather="chevron-down"></i></span></h6>
+                    </div>
+                    <div class="grid-options d-inline-block">
+                      <ul>
+                        <li><a class="product-2-layout-view" href="javascript:void(0)" data-original-title="" title=""><span class="line-grid line-grid-1 bg-primary"></span><span class="line-grid line-grid-2 bg-primary"></span></a></li>
+                        <li><a class="product-3-layout-view" href="javascript:void(0)" data-original-title="" title=""><span class="line-grid line-grid-3 bg-primary"></span><span class="line-grid line-grid-4 bg-primary"></span><span class="line-grid line-grid-5 bg-primary"></span></a></li>
+                        <li><a class="product-4-layout-view" href="javascript:void(0)" data-original-title="" title=""><span class="line-grid line-grid-6 bg-primary"></span><span class="line-grid line-grid-7 bg-primary"></span><span class="line-grid line-grid-8 bg-primary"></span><span class="line-grid line-grid-9 bg-primary"></span></a></li>
+                        <li><a class="product-6-layout-view" href="javascript:void(0)" data-original-title="" title=""><span class="line-grid line-grid-10 bg-primary"></span><span class="line-grid line-grid-11 bg-primary"></span><span class="line-grid line-grid-12 bg-primary"></span><span class="line-grid line-grid-13 bg-primary"></span><span class="line-grid line-grid-14 bg-primary"></span><span class="line-grid line-grid-15 bg-primary"></span></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-md-9 col-sm-10 text-end">
+                    <div class="select2-drpdwn-product select-options d-inline-block">
+                      <select class="form-control btn-square" name="select">
+                        <option value="opt1">Featured</option>
+                        <option value="opt2">Lowest Prices</option>
+                        <option value="opt3">Highest Prices</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="pro-filter-sec">
+                      <div class="product-sidebar">
+                        <div class="filter-section">
+                          <div class="card">
+                            <div class="card-header">
+                              <h6 class="mb-0 f-w-600">Filters<span class="pull-right"><i class="fa fa-chevron-down toggle-data"></i></span></h6>
+                            </div>
+                            <div class="left-filter">
+                              <div class="card-body filter-cards-view animate-chk">
+                                <div class="product-filter">
+                                  <h6 class="f-w-600">Category</h6>
+                                  <div class="checkbox-animated mt-0">
+                                    <label class="d-block" for="edo-ani5">
+                                      <input class="checkbox_animated" id="edo-ani5" type="checkbox" data-original-title="" title="">Man Shirt
+                                    </label>
+                                    <label class="d-block" for="edo-ani6">
+                                      <input class="checkbox_animated" id="edo-ani6" type="checkbox" data-original-title="" title="">Man Jeans
+                                    </label>
+                                    <label class="d-block" for="edo-ani7">
+                                      <input class="checkbox_animated" id="edo-ani7" type="checkbox" data-original-title="" title="">Woman Top
+                                    </label>
+                                    <label class="d-block" for="edo-ani8">
+                                      <input class="checkbox_animated" id="edo-ani8" type="checkbox" data-original-title="" title="">Woman Jeans
+                                    </label>
+                                    <label class="d-block" for="edo-ani9">
+                                      <input class="checkbox_animated" id="edo-ani9" type="checkbox" data-original-title="" title="">Man T-shirt
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="product-filter">
+                                  <h6 class="f-w-600">Brand</h6>
+                                  <div class="checkbox-animated mt-0">
+                                    <label class="d-block" for="chk-ani">
+                                      <input class="checkbox_animated" id="chk-ani" type="checkbox" data-original-title="" title="">
+                                    </label>
+                                    <label class="d-block" for="chk-ani1">
+                                      <input class="checkbox_animated" id="chk-ani1" type="checkbox" data-original-title="" title="">Diesel
+                                    </label>
+                                    <label class="d-block" for="chk-ani2">
+                                      <input class="checkbox_animated" id="chk-ani2" type="checkbox" data-original-title="" title="">Lee
+                                    </label>
+                                    <label class="d-block" for="chk-ani3">
+                                      <input class="checkbox_animated" id="chk-ani3" type="checkbox" data-original-title="" title="">Hudson
+                                    </label>
+                                    <label class="d-block" for="chk-ani4">
+                                      <input class="checkbox_animated" id="chk-ani4" type="checkbox" data-original-title="" title="">Denizen
+                                    </label>
+                                    <label class="d-block" for="chk-ani5">
+                                      <input class="checkbox_animated" id="chk-ani5" type="checkbox" data-original-title="" title="">Spykar
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="product-filter slider-product">
+                                  <h6 class="f-w-600">Colors</h6>
+                                  <div class="color-selector">
+                                    <ul>
+                                      <li class="white"></li>
+                                      <li class="bg-primary">               </li>
+                                      <li class="bg-secondary"></li>
+                                      <li class="bg-success"></li>
+                                      <li class="bg-warning"></li>
+                                      <li class="bg-danger"></li>
+                                      <li class="blue"></li>
+                                      <li class="red"></li>
+                                    </ul>
+                                  </div>
+                                </div>
+                                <div class="product-filter pb-0">
+                                  <h6 class="f-w-600">Price</h6>
+                                  <input id="u-range-03" type="text">
+                                  <h6 class="f-w-600">New Products</h6>
+                                </div>
+                                <div class="product-filter pb-0 new-products">
+                                  <div class="owl-carousel owl-theme" id="testimonial">
+                                    <div class="item">
+                                      <div class="product-box">
+                                        <div class="media">
+                                          <div class="product-img me-3"><img class="img-fluid" src="frontassets/assets/images/ecommerce/01.jpg" alt="" data-original-title="" title=""></div>
+                                          <div class="media-body">
+                                            <div class="product-details">
+                                              <div>
+                                                <ul>
+                                                  <li><i class="fa fa-star font-warning"></i></li>
+                                                  <li><i class="fa fa-star font-warning"></i></li>
+                                                  <li><i class="fa fa-star font-warning"></i></li>
+                                                  <li><i class="fa fa-star font-warning"></i></li>
+                                                  <li><i class="fa fa-star font-warning"></i></li>
+                                                </ul>
+                                                <p class="mb-0 f-w-700">Fancy Shirt</p>
+                                                <div class="p f-w-500">$100.00</div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="product-box">
+                                        <div class="media">
+                                          <div class="product-img me-3"><img class="img-fluid" src="frontassets/assets/images/ecommerce/02.jpg" alt="" data-original-title="" title=""></div>
+                                          <div class="media-body">
+                                            <div class="product-details">
+                                              <div>
+                                                <ul>
+                                                  <li><i class="fa fa-star font-warning"></i></li>
+                                                  <li><i class="fa fa-star font-warning"></i></li>
+                                                  <li><i class="fa fa-star font-warning"></i></li>
+                                                  <li><i class="fa fa-star font-warning"></i></li>
+                                                  <li><i class="fa fa-star font-warning"></i></li>
+                                                </ul>
+                                                <p class="mb-0 f-w-700">Fancy Shirt</p>
+                                                <div class="p f-w-500">$100.00</div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="product-box">
+                                        <div class="media">
+                                          <div class="product-img me-3"><img class="img-fluid" src="frontassets/assets/images/ecommerce/03.jpg" alt="" data-original-title="" title=""></div>
+                                          <div class="media-body">
+                                            <div class="product-details">
+                                              <div>
+                                                <ul>
+                                                  <li><i class="fa fa-star font-warning"></i></li>
+                                                  <li><i class="fa fa-star font-warning"></i></li>
+                                                  <li><i class="fa fa-star font-warning"></i></li>
+                                                  <li><i class="fa fa-star font-warning"></i></li>
+                                                  <li><i class="fa fa-star font-warning"></i></li>
+                                                </ul>
+                                                <p class="mb-0 f-w-700">Fancy Shirt</p>
+                                                <div class="p f-w-500">$100.00</div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="item">
+                                      <div class="product-box">
+                                        <div class="media">
+                                          <div class="product-img me-3"><img class="img-fluid" src="frontassets/assets/images/ecommerce/01.jpg" alt="" data-original-title="" title=""></div>
+                                          <div class="media-body">
+                                            <div class="product-details">
+                                              <div>
+                                                <ul>
+                                                  <li><i class="fa fa-star font-warning"></i></li>
+                                                  <li><i class="fa fa-star font-warning"></i></li>
+                                                  <li><i class="fa fa-star font-warning"></i></li>
+                                                  <li><i class="fa fa-star font-warning"></i></li>
+                                                  <li><i class="fa fa-star font-warning"></i></li>
+                                                </ul>
+                                                <p class="mb-0 f-w-700">Fancy Shirt</p>
+                                                <div class="p f-w-500">$100.00</div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="product-box">
+                                        <div class="media">
+                                          <div class="product-img me-3"><img class="img-fluid" src="frontassets/assets/images/ecommerce/02.jpg" alt="" data-original-title="" title=""></div>
+                                          <div class="media-body">
+                                            <div class="product-details">
+                                              <div>
+                                                <ul>
+                                                  <li><i class="fa fa-star font-warning"></i></li>
+                                                  <li><i class="fa fa-star font-warning"></i></li>
+                                                  <li><i class="fa fa-star font-warning"></i></li>
+                                                  <li><i class="fa fa-star font-warning"></i></li>
+                                                  <li><i class="fa fa-star font-warning"></i></li>
+                                                </ul>
+                                                <p class="mb-0 f-w-700">Fancy Shirt</p>
+                                                <div class="p f-w-500">$100.00</div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="product-box">
+                                        <div class="media">
+                                          <div class="product-img me-3"><img class="img-fluid" src="frontassets/assets/images/ecommerce/03.jpg" alt="" data-original-title="" title=""></div>
+                                          <div class="media-body">
+                                            <div class="product-details">
+                                              <div>
+                                                <ul>
+                                                  <li><i class="fa fa-star font-warning"></i></li>
+                                                  <li><i class="fa fa-star font-warning"></i></li>
+                                                  <li><i class="fa fa-star font-warning"></i></li>
+                                                  <li><i class="fa fa-star font-warning"></i></li>
+                                                  <li><i class="fa fa-star font-warning"></i></li>
+                                                </ul>
+                                                <p class="mb-0 f-w-700">Fancy Shirt</p>
+                                                <div class="p f-w-500">$100.00</div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="product-filter text-center"><img class="img-fluid banner-product" src="frontassets/assets/images/ecommerce/banner.jpg" alt="" data-original-title="" title=""></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="product-search">
+                        <form>
+                          <div class="form-group m-0">
+                            <input class="form-control" type="search" placeholder="Search.." data-original-title="" title=""><i class="fa fa-search"></i>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="product-wrapper-grid">
+                <div class="row">
+                    @if(count($femmes) > 1)
+                    @foreach ($femmes as $item)
+                    <div class="col-xl-3 col-sm-6 xl-4">
+                        <div class="card">
+                        <div class="product-box">
+                            <div class="product-img">
+                            <img class="img" src="{{ asset('fammes/'.$item->image) }}" style="width: 100%;height: 100%;" alt="">
+                            <div class="product-hover">
+                                <ul>
+                                    @if ($item->disponible==1)
+                                    <li><a href="cart.html"><i class="icon-shopping-cart"></i></a></li>
+                                    @endif
+                                {{-- < --}}
+                                <li><a data-bs-toggle="modal" data-bs-target="#exampleModalCenter16">
+                                    <i class="icon-eye"></i></a>
+                                </li>
+                                </ul>
+                            </div>
+                            </div>
+                            <div class="modal fade" id="exampleModalCenter16">
+                            <div class="modal-dialog modal-lg modal-dialog-centered">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <div class="product-box row">
+                                    <div class="product-img col-lg-6"><img class="img-fluid" src="{{ asset('fammes/'.$item->image) }}" alt=""></div>
+                                    <div class="product-details col-lg-6 text-start"><a href="product-page.html">
+                                        <h4>{{ $item->nom }}                                    </h4></a>
+
+                                        <div class="product-view">
+                                        <h6 class="f-w-600">
+                                            Disponible:  @if ($item->disponible==1)
+                                            Oui
+                                        @else
+                                            No
+                                        @endif
+                                        </h6>
+                                        </div>
+                                        <div class="product-size">
+                                            <ul>
+                                                <li>
+                                                Salaire: {{ $item->salaire }}
+                                                </li>
+                                                <li>
+                                                enfant:
+                                                    @if ($item->enfant==1)
+                                                    Oui
+                                                @else
+                                                    No
+                                                @endif
+
+                                                </li>
+                                                <li>
+                                                    etat:
+                                                    {{ $item->etat }}
+                                                </li>
+                                            </ul>
+                                            <ul>
+                                                <li>
+                                                Age: {{ $item->age }}
+                                                </li>
+                                                <li>
+                                                enfant:
+                                                {{ $item->lang }}
 
 
-        <div class="col-12 p-0 text-center">
-          <img src="" style="width:150px;border-radius:50%;" class="d-inline-block">
-        </div>
-        <div class="col-12 py-3">
-          <h1 class="font-5  text-center">Les fammes</h1>
-            <div class="col-12 px-0 d-flex justify-content-center pt-2 pb-2" style="direction: ltr;flex-wrap: wrap;">
-              {{-- /// --}}
+
+                                                </li>
+                                                <li>
+                                                    adresse:
+                                                    {{ $item->adresse }}
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                    </div>
+                                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="product-details">
+
+                                <a href="product-page.html">
+                                <h4>{{ $item->nom }}                                       </h4></a>
+                            <p>Disponible:  @if ($item->disponible==1)
+                                Oui
+                            @else
+                                No
+                            @endif
+                            </p>
+
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    @endforeach
+
+
+                @else
+                <div class="alert alert-warning">
+
+                <strong>Sorry!</strong> No Product Found.
+                </div>
+                @endif
+
+
+
+
+                </div>
+              </div>
+              <div class="card page-bottom b-r-0">
+                <div class="row">
+                  <div class="col-12 col-sm-6">
+                    <div class="info-block">
+                      <ul class="pagination pagination-primary">
+                        <li class="page-item disabled"><a class="page-link" href="javascript:void(0)" tabindex="-1">Previous</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:void(0)">1</a></li>
+                        <li class="page-item active"><a class="page-link" href="javascript:void(0)">2 <span class="sr-only">(current)</span></a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:void(0)">Next</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-6 text-end">
+                    <div class="pagination-content"><span class="f-w-600">Showing Products 1 - 24 Of 200 Results</span></div>
+                  </div>
+                </div>
+              </div>
             </div>
-
-            @yield('content')
+          </div>
+          <!-- Container-fluid Ends-->
         </div>
+        <!-- footer start-->
+        <footer class="footer">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-12 footer-copyright text-center">
+                <p class="mb-0">Copyright 2023 ©   </p>
+              </div>
+            </div>
+          </div>
+        </footer>
       </div>
     </div>
-
-    <!-- <script src="https://unpkg.com/vue@next"></script> -->
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript">
-        $('a[href="' + window.location.href.split('?')[0] + '"] div,a[href="' + window.location.href.split('?')[0] + '"],a[href="' + window.location.href + '"] div,a[href="' + window.location.href + '"]').addClass('active');
-        setTimeout(function(){
-          $('.main').css({'opacity':'1'});
-          $('.loading-overlay').fadeOut(200);
-        },1200);
-
-        Fancybox.bind("[data-fancybox]", {
-          // Your options go here
-        });
-        Fancybox.bind(".optimize-fonts img", {
-
-        });
-
-    </script>
+    <!-- latest jquery-->
+    <script src="{{asset('frontassets/assets/js/jquery-3.5.1.min.js')}}"></script>
+    <!-- Bootstrap js-->
+    <script src="{{asset('frontassets/assets/js/bootstrap/bootstrap.bundle.min.js')}}"></script>
+    <!-- feather icon js-->
+    <script src="{{asset('frontassets/assets/js/icons/feather-icon/feather.min.js')}}"></script>
+    <script src="{{asset('frontassets/assets/js/icons/feather-icon/feather-icon.js')}}"></script>
+    <!-- scrollbar js-->
+    <script src="{{asset('frontassets/assets/js/scrollbar/simplebar.js')}}"></script>
+    <script src="{{asset('frontassets/assets/js/scrollbar/custom.js')}}"></script>
+    <!-- Sidebar jquery-->
+    <script src="{{asset('frontassets/assets/js/config.js')}}"></script>
+    <!-- Plugins JS start-->
+    <script src="{{asset('frontassets/assets/js/sidebar-menu.js')}}"></script>
+    <script src="{{asset('frontassets/assets/js/range-slider/ion.rangeSlider.min.js')}}"></script>
+    <script src="{{asset('frontassets/assets/js/range-slider/rangeslider-script.js')}}"></script>
+    <script src="{{asset('frontassets/assets/js/touchspin/vendors.min.js')}}"></script>
+    <script src="{{asset('frontassets/assets/js/touchspin/touchspin.js')}}"></script>
+    <script src="{{asset('frontassets/assets/js/touchspin/input-groups.min.js')}}"></script>
+    <script src="{{asset('frontassets/assets/js/owlcarousel/owl.carousel.js')}}"></script>
+    <script src="{{asset('frontassets/assets/js/select2/select2.full.min.js')}}"></script>
+    <script src="{{asset('frontassets/assets/js/select2/select2-custom.js')}}"></script>
+    <script src="{{asset('frontassets/assets/js/product-tab.js')}}"></script>
+    <!-- Plugins JS Ends-->
+    <!-- Theme js-->
+    <script src="{{asset('frontassets/assets/js/script.js')}}"></script>
+    <script src="{{asset('frontassets/assets/js/theme-customizer/customizer.js')}}"></script>
+    <!-- login js-->
+    <!-- Plugin used-->
   </body>
 </html>

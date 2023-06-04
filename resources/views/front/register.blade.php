@@ -42,7 +42,7 @@ preloader -->
                 <div class="col-lg-4 col-md-6 bg-white">
                     <div class="login-fancy pb-40 clearfix">
 
-                    <form method="POST" action="">
+                    <form method="POST" action="{{ route('front.register') }}">
                         @csrf
 
                             <div class="section-field mb-20">
@@ -76,7 +76,7 @@ preloader -->
                             <div class="section-field mb-20">
                                 <label class="mb-10" for="Password"> Nom   * </label>
                                 <input id="password" type="text"
-                                       class="form-control @error('nom') is-invalid @enderror" name="nom"
+                                       class="form-control @error('name') is-invalid @enderror" name="name"
                                        required autocomplete="current-password">
 
                                 @error('nom')
@@ -88,46 +88,19 @@ preloader -->
                             </div>
 
 
-                            <div class="section-field mb-20">
-                                <label class="mb-10" for="Password"> Prenom   * </label>
-                                <input id="password" type="Text"
-                                       class="form-control @error('Prenom') is-invalid @enderror" name="Prenom"
-                                       required autocomplete="current-password">
-
-                                @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                @enderror
-
-                            </div>
-
-
-                            <div class="section-field mb-20">
-                                <label class="mb-10" for="Password"> NNI   * </label>
-                                <input id="password" type="password"
-                                       class="form-control @error('password') is-invalid @enderror" name="nni"
-                                       required autocomplete="current-password">
-
-                                @error('nni')
-                                <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                @enderror
-
-                            </div>
-
                             <div class="section-field">
                                 <div class="remember-checkbox mb-30">
                                     <input type="checkbox" class="form-control" name="two" id="two" />
 
                                 </div>
                             </div>
-                            <button class="button"><span>Login</span><i class="fa fa-check"></i></button>
+                            <button class="button"><span>Inscrire</span><i class="fa fa-check"></i></button>
+
                         </form>
-                        <a href="{{ route('frontregister') }}" class="float-right">
-                        <button class="button"><span>Inscrire</span><i class="fa fa-check"></i></button>
-                        </a>
+                        <a href="{{ route('front.getlogin') }}" class="float-right">
+
+                        <button class="button"><span>Login</span><i class="fa fa-check"></i></button>
+                    </a>
                     </div>
                 </div>
             </div>

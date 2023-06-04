@@ -35,7 +35,6 @@ class FemmesController extends Controller
      */
     public function store(Request $request)
     {
-
         $famme =new Femme();
         $famme->nom=$request->nom;
         $famme->age=$request->age;
@@ -45,6 +44,7 @@ class FemmesController extends Controller
         $famme->lang=$request->lang;
         $famme->enfant=$request->enfant;
         $famme->salaire=$request->salaire;
+        
         if($request->has('image'))
         {
             $img = $request->file("image");
@@ -54,7 +54,7 @@ class FemmesController extends Controller
             $famme->image = $filename;
         }
         $famme->save();
-        redirect()->route('fammes.index');
+     return   redirect()->route('fammes.index');
     }
 
     /**

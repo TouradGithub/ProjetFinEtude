@@ -42,7 +42,7 @@
                     <div class="login-fancy pb-40 clearfix">
 
 
-                    <form method="POST" action="">
+                    <form method="POST" action="{{ route('front.login') }}">
                         @csrf
 
                             <div class="section-field mb-20">
@@ -75,9 +75,9 @@
                                 <div class="remember-checkbox mb-30">
                                     <input type="checkbox" class="form-control" name="two" id="two" />
                                 </div>
-                            </div><button class="button"><span>Register</span><i class="fa fa-check"></i></button>
-                            <a class="button" href="{{ route('frontlogin') }}" class="float-right">
-                            <span>Login</span><i class="fa fa-check"></i></a>
+                            </div><button class="button"><span>Login</span><i class="fa fa-check"></i></button>
+                            <a class="button" href="{{ route('front.getRegister') }}" class="float-right">
+                            <span>register</span><i class="fa fa-check"></i></a>
                         </form>
                     </div>
                 </div>

@@ -101,7 +101,7 @@ Fammes
                                 <div class="col">
                                     <label for="title">addrsse</label>
                                     <div class='input-group date'>
-                                        <input class="form-control" type="text"  id="datepicker-action" name="addrsse" data-date-format="yyyy-mm-dd"  required>
+                                        <input class="form-control" type="text"  name="addrsse"   required>
                                     </div>
                                     @error('addrsse')
                                     <div class="alert alert-danger">{{ $message }}</div>
