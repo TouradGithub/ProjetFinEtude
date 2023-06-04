@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-// Route::get('/frontlogin', [FrontController::class, 'register'])->name('frontlogin');
+
 
 Route::get('/admin/login', [AdminController::class, 'getLogin'])->name('getLogin');
 Route::get('/admin/logout', [AdminController::class, 'logout'])->name('logoutAdmin');
@@ -24,6 +24,10 @@ Route::post('/loginAdmin', [AdminController::class, 'login'])->name('loginstore'
         Route::post('delete/{id}', [FemmesController::class, 'delete'])->name('fammes.delete');
 
     });
+
+
+
+    Route::get('/', [FrontController::class, 'index'])->name('frontlogin');
 // Route::prefix('adm')->middleware('auth')->group(function () {
 //     Route::get('/home', function () {
 //         return view('home');
