@@ -15,11 +15,16 @@ class CreateFemmesTable extends Migration
     {
         Schema::create('femmes', function (Blueprint $table) {
             $table->id();
-            $table->string('Nom');
-            $table->integer('Age');
-            $table->integer('Salaire');
-            $table->string('Etat');
-            $table->string('Lieu-de-travail');
+            $table->string('nom');
+            $table->integer('age');
+            $table->integer('salaire');
+            $table->string('etat');
+            $table->string('image');
+            $table->string('addrsse');
+
+            $table->integer('disponible');
+            $table->string('lang');
+            $table->string('enfant');
             $table->timestamps();
         });
     }

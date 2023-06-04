@@ -1,7 +1,7 @@
 @php
 $i=0;
 @endphp
-@extends('layouts.app_front',[
+@extends('layouts1.app_front',[
 ])
 @section('content')
 <div class="col-12 p-0">

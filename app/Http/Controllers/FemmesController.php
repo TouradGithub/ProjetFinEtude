@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\Femme;
 use Illuminate\Http\Request;
-
+use Image;
+use File;
 class FemmesController extends Controller
 {
     /**
@@ -13,10 +14,8 @@ class FemmesController extends Controller
      */
     public function index()
     {
-        $femmes=Femme::all();
-        return view('femmes.index')->with([
-            'femmes' =>$femmes
-        ]);
+        $fammes=Femme::all();
+        return view('admin.femmes.index',compact('fammes'));
     }
 
     /**
@@ -26,9 +25,8 @@ class FemmesController extends Controller
      */
     public function create()
     {
-        //
+        return view("admin.femmes.create");
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -37,7 +35,26 @@ class FemmesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $famme =new Femme();
+        $famme->nom=$request->nom;
+        $famme->age=$request->age;
+        $famme->disponible=$request->disponible;
+        $famme->etat=$request->etat;
+        $famme->addrsse=$request->addrsse;
+        $famme->lang=$request->lang;
+        $famme->enfant=$request->enfant;
+        $famme->salaire=$request->salaire;
+        if($request->has('image'))
+        {
+            $img = $request->file("image");
+            $filename = time() . '.' . $img->getClientOriginalExtension();
+            $path = public_path('fammes/' . $filename);
+            $request->image->move(public_path('fammes/' ), $filename);
+            $famme->image = $filename;
+        }
+        $famme->save();
+        redirect()->route('fammes.index');
     }
 
     /**
@@ -80,8 +97,16 @@ class FemmesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete(Request $request ,$id)
     {
-        //
+        $femme =Femme::find($id);
+
+        if($femme != null){
+            $femme->delete();
+            if($femme->image){
+                File::delete(public_path('fammes/'.$femme->image));
+            }
+        }
+        return redirect()->back();
     }
 }
