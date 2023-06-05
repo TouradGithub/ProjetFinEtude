@@ -12,7 +12,7 @@
     <meta name="author" content="pixelstrap">
     <link rel="icon" href="{{asset('frontassets/assets/images/logo/favicon-icon.png')}}" type="image/x-icon">
     <link rel="shortcut icon" href="{{asset('frontassets/assets/images/logo/favicon-icon.png')}}" type="image/x-icon">
-    <title>Zeta admin dashboard </title>
+    <title>front </title>
     <!-- Google font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
