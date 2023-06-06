@@ -1,5 +1,5 @@
 @php
-    $femmes=App\Models\Femme::all();
+
 @endphp
 <!DOCTYPE html>
 <html lang="en">
@@ -52,61 +52,19 @@
         <div class="header-wrapper row m-0">
           <div class="header-logo-wrapper col-auto p-0">
             <div class="logo-wrapper"><a href="index.html"><img class="img-fluid" src="{{asset('frontassets/assets/images/logo/logo.png')}} alt=""></a></div>
-            <div class="toggle-sidebar">
-              <div class="status_toggle sidebar-toggle d-flex">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g>
-                    <g>
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M21.0003 6.6738C21.0003 8.7024 19.3551 10.3476 17.3265 10.3476C15.2979 10.3476 13.6536 8.7024 13.6536 6.6738C13.6536 4.6452 15.2979 3 17.3265 3C19.3551 3 21.0003 4.6452 21.0003 6.6738Z" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M10.3467 6.6738C10.3467 8.7024 8.7024 10.3476 6.6729 10.3476C4.6452 10.3476 3 8.7024 3 6.6738C3 4.6452 4.6452 3 6.6729 3C8.7024 3 10.3467 4.6452 10.3467 6.6738Z" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M21.0003 17.2619C21.0003 19.2905 19.3551 20.9348 17.3265 20.9348C15.2979 20.9348 13.6536 19.2905 13.6536 17.2619C13.6536 15.2333 15.2979 13.5881 17.3265 13.5881C19.3551 13.5881 21.0003 15.2333 21.0003 17.2619Z" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M10.3467 17.2619C10.3467 19.2905 8.7024 20.9348 6.6729 20.9348C4.6452 20.9348 3 19.2905 3 17.2619C3 15.2333 4.6452 13.5881 6.6729 13.5881C8.7024 13.5881 10.3467 15.2333 10.3467 17.2619Z" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </g>
-                  </g>
-                </svg>
-              </div>
-            </div>
+          
           </div>
           <div class="left-side-header col ps-0 d-none d-md-block">
-            <div class="input-group"><span class="input-group-text" id="basic-addon1">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g>
-                    <g>
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M11.2753 2.71436C16.0029 2.71436 19.8363 6.54674 19.8363 11.2753C19.8363 16.0039 16.0029 19.8363 11.2753 19.8363C6.54674 19.8363 2.71436 16.0039 2.71436 11.2753C2.71436 6.54674 6.54674 2.71436 11.2753 2.71436Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M19.8987 18.4878C20.6778 18.4878 21.3092 19.1202 21.3092 19.8983C21.3092 20.6783 20.6778 21.3097 19.8987 21.3097C19.1197 21.3097 18.4873 20.6783 18.4873 19.8983C18.4873 19.1202 19.1197 18.4878 19.8987 18.4878Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </g>
-                  </g>
-                </svg></span>
-              <input class="form-control" type="text" placeholder="Search here.." aria-label="search" aria-describedby="basic-addon1">
-            </div>
+
           </div>
           <div class="nav-right col-10 col-sm-6 pull-right right-header p-0">
             <ul class="nav-menus">
 
 
-                <li class="onhover-dropdown">
-                    <div class="notification-box">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g>
-                          <g>
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.9961 2.51416C7.56185 2.51416 5.63519 6.5294 5.63519 9.18368C5.63519 11.1675 5.92281 10.5837 4.82471 13.0037C3.48376 16.4523 8.87614 17.8618 11.9961 17.8618C15.1152 17.8618 20.5076 16.4523 19.1676 13.0037C18.0695 10.5837 18.3571 11.1675 18.3571 9.18368C18.3571 6.5294 16.4295 2.51416 11.9961 2.51416Z" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                            <path d="M14.306 20.5122C13.0117 21.9579 10.9927 21.9751 9.68604 20.5122" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                          </g>
-                        </g>
-                      </svg><span class="badge rounded-pill badge-warning">4 </span>
-                    </div>
-
-                  </li>
 
               <li class="onhover-dropdown">
-                @guest
 
-                // The user is not login...
-
-
-<a href="{{ route('front.getlogin') }}"><button>register</button></a>
-@endguest
-              </li>
+                </li>
               <li class="maximize"><a class="text-dark" href="#!" onclick="javascript:toggleFullScreen()">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g>
@@ -160,13 +118,7 @@
                 <div class="col-12 col-sm-6">
                   <h3>Femmes</h3>
                 </div>
-                <div class="col-12 col-sm-6">
-                  <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">                                       <i data-feather="home"></i></a></li>
-                    <li class="breadcrumb-item"></li>
-                    <li class="breadcrumb-item active">Menage</li>
-                  </ol>
-                </div>
+
               </div>
             </div>
           </div>
@@ -192,226 +144,70 @@
                   </div>
                   <div class="col-md-9 col-sm-10 text-end">
                     <div class="select2-drpdwn-product select-options d-inline-block">
-                      <select class="form-control btn-square" name="select">
-                        <option value="opt1">Featured</option>
-                        <option value="opt2">Lowest Prices</option>
-                        <option value="opt3">Highest Prices</option>
-                      </select>
+
                     </div>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-md-12">
+
+
+                        <div class="row">
+                  <div class="col-md-3">
+
+                        <div class="row">
+                            <div class="col-md-3">
+
                     <div class="pro-filter-sec">
                       <div class="product-sidebar">
                         <div class="filter-section">
-                          <div class="card">
-                            <div class="card-header">
-                              <h6 class="mb-0 f-w-600">Filters<span class="pull-right"><i class="fa fa-chevron-down toggle-data"></i></span></h6>
-                            </div>
-                            <div class="left-filter">
-                              <div class="card-body filter-cards-view animate-chk">
-                                <div class="product-filter">
-                                  <h6 class="f-w-600">Category</h6>
-                                  <div class="checkbox-animated mt-0">
-                                    <label class="d-block" for="edo-ani5">
-                                      <input class="checkbox_animated" id="edo-ani5" type="checkbox" data-original-title="" title="">Man Shirt
-                                    </label>
-                                    <label class="d-block" for="edo-ani6">
-                                      <input class="checkbox_animated" id="edo-ani6" type="checkbox" data-original-title="" title="">Man Jeans
-                                    </label>
-                                    <label class="d-block" for="edo-ani7">
-                                      <input class="checkbox_animated" id="edo-ani7" type="checkbox" data-original-title="" title="">Woman Top
-                                    </label>
-                                    <label class="d-block" for="edo-ani8">
-                                      <input class="checkbox_animated" id="edo-ani8" type="checkbox" data-original-title="" title="">Woman Jeans
-                                    </label>
-                                    <label class="d-block" for="edo-ani9">
-                                      <input class="checkbox_animated" id="edo-ani9" type="checkbox" data-original-title="" title="">Man T-shirt
-                                    </label>
-                                  </div>
+                            <div class="card">
+                                <div class="card-header">
+                                  <h6 class="mb-0 f-w-600">Filters<span class="pull-right"><i class="fa fa-chevron-down toggle-data"></i></span></h6>
                                 </div>
-                                <div class="product-filter">
-                                  <h6 class="f-w-600">Brand</h6>
-                                  <div class="checkbox-animated mt-0">
-                                    <label class="d-block" for="chk-ani">
-                                      <input class="checkbox_animated" id="chk-ani" type="checkbox" data-original-title="" title="">
-                                    </label>
-                                    <label class="d-block" for="chk-ani1">
-                                      <input class="checkbox_animated" id="chk-ani1" type="checkbox" data-original-title="" title="">Diesel
-                                    </label>
-                                    <label class="d-block" for="chk-ani2">
-                                      <input class="checkbox_animated" id="chk-ani2" type="checkbox" data-original-title="" title="">Lee
-                                    </label>
-                                    <label class="d-block" for="chk-ani3">
-                                      <input class="checkbox_animated" id="chk-ani3" type="checkbox" data-original-title="" title="">Hudson
-                                    </label>
-                                    <label class="d-block" for="chk-ani4">
-                                      <input class="checkbox_animated" id="chk-ani4" type="checkbox" data-original-title="" title="">Denizen
-                                    </label>
-                                    <label class="d-block" for="chk-ani5">
-                                      <input class="checkbox_animated" id="chk-ani5" type="checkbox" data-original-title="" title="">Spykar
-                                    </label>
-                                  </div>
-                                </div>
-                                <div class="product-filter slider-product">
-                                  <h6 class="f-w-600">Colors</h6>
-                                  <div class="color-selector">
-                                    <ul>
-                                      <li class="white"></li>
-                                      <li class="bg-primary">               </li>
-                                      <li class="bg-secondary"></li>
-                                      <li class="bg-success"></li>
-                                      <li class="bg-warning"></li>
-                                      <li class="bg-danger"></li>
-                                      <li class="blue"></li>
-                                      <li class="red"></li>
-                                    </ul>
-                                  </div>
-                                </div>
-                                <div class="product-filter pb-0">
-                                  <h6 class="f-w-600">Price</h6>
-                                  <input id="u-range-03" type="text">
-                                  <h6 class="f-w-600">New Products</h6>
-                                </div>
-                                <div class="product-filter pb-0 new-products">
-                                  <div class="owl-carousel owl-theme" id="testimonial">
-                                    <div class="item">
-                                      <div class="product-box">
-                                        <div class="media">
-                                          <div class="product-img me-3"><img class="img-fluid" src="frontassets/assets/images/ecommerce/01.jpg" alt="" data-original-title="" title=""></div>
-                                          <div class="media-body">
-                                            <div class="product-details">
-                                              <div>
-                                                <ul>
-                                                  <li><i class="fa fa-star font-warning"></i></li>
-                                                  <li><i class="fa fa-star font-warning"></i></li>
-                                                  <li><i class="fa fa-star font-warning"></i></li>
-                                                  <li><i class="fa fa-star font-warning"></i></li>
-                                                  <li><i class="fa fa-star font-warning"></i></li>
-                                                </ul>
-                                                <p class="mb-0 f-w-700">Fancy Shirt</p>
-                                                <div class="p f-w-500">$100.00</div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <div class="product-box">
-                                        <div class="media">
-                                          <div class="product-img me-3"><img class="img-fluid" src="frontassets/assets/images/ecommerce/02.jpg" alt="" data-original-title="" title=""></div>
-                                          <div class="media-body">
-                                            <div class="product-details">
-                                              <div>
-                                                <ul>
-                                                  <li><i class="fa fa-star font-warning"></i></li>
-                                                  <li><i class="fa fa-star font-warning"></i></li>
-                                                  <li><i class="fa fa-star font-warning"></i></li>
-                                                  <li><i class="fa fa-star font-warning"></i></li>
-                                                  <li><i class="fa fa-star font-warning"></i></li>
-                                                </ul>
-                                                <p class="mb-0 f-w-700">Fancy Shirt</p>
-                                                <div class="p f-w-500">$100.00</div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <div class="product-box">
-                                        <div class="media">
-                                          <div class="product-img me-3"><img class="img-fluid" src="frontassets/assets/images/ecommerce/03.jpg" alt="" data-original-title="" title=""></div>
-                                          <div class="media-body">
-                                            <div class="product-details">
-                                              <div>
-                                                <ul>
-                                                  <li><i class="fa fa-star font-warning"></i></li>
-                                                  <li><i class="fa fa-star font-warning"></i></li>
-                                                  <li><i class="fa fa-star font-warning"></i></li>
-                                                  <li><i class="fa fa-star font-warning"></i></li>
-                                                  <li><i class="fa fa-star font-warning"></i></li>
-                                                </ul>
-                                                <p class="mb-0 f-w-700">Fancy Shirt</p>
-                                                <div class="p f-w-500">$100.00</div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
+                                <form action="{{ route('front.filter') }}" method="POST">
+                                    @csrf
+                                <div class="left-filter">
+                                  <div class="card-body filter-cards-view animate-chk">
+                                    <div class="product-filter">
+                                      <div class="checkbox-animated mt-0">
+                                        <label class="d-block" for="edo-ani5">
+                                          <input class="checkbox_animated" id="edo-ani5" name="enfant" value="1" type="checkbox" data-original-title="" title="">Enfant
+                                        </label>
+                                        <label class="d-block" for="edo-ani6">
+                                          <input class="checkbox_animated" id="edo-ani6" name="disponible" value="1"  type="checkbox" data-original-title="" title="">Disponible
+                                        </label>
+                                        <br>
+                                        <p>Etat:</p>
+                                          <input type="radio" id="css" name="etat" value="12H">
+                                          <label for="html">12H</label>
+
+                                          <input type="radio" id="javascript" name="etat" value="24H">
+                                          <label for="css">24H</label>
+                                        <br>
+
+                                        <p> language:</p>
+                                         <input type="radio" id="html" name="lang" value="english">
+                                          <label for="html">english</label><br>
+                                          <input type="radio" id="css" name="lang" value="francais">
+                                          <label for="css">francais</label><br>
+                                          <input type="radio" id="javascript" name="lang" value="arabic">
+                                          <label for="javascript">arabic</label>
+
+                                        <br><br>
+
                                       </div>
                                     </div>
-                                    <div class="item">
-                                      <div class="product-box">
-                                        <div class="media">
-                                          <div class="product-img me-3"><img class="img-fluid" src="frontassets/assets/images/ecommerce/01.jpg" alt="" data-original-title="" title=""></div>
-                                          <div class="media-body">
-                                            <div class="product-details">
-                                              <div>
-                                                <ul>
-                                                  <li><i class="fa fa-star font-warning"></i></li>
-                                                  <li><i class="fa fa-star font-warning"></i></li>
-                                                  <li><i class="fa fa-star font-warning"></i></li>
-                                                  <li><i class="fa fa-star font-warning"></i></li>
-                                                  <li><i class="fa fa-star font-warning"></i></li>
-                                                </ul>
-                                                <p class="mb-0 f-w-700">Fancy Shirt</p>
-                                                <div class="p f-w-500">$100.00</div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <div class="product-box">
-                                        <div class="media">
-                                          <div class="product-img me-3"><img class="img-fluid" src="frontassets/assets/images/ecommerce/02.jpg" alt="" data-original-title="" title=""></div>
-                                          <div class="media-body">
-                                            <div class="product-details">
-                                              <div>
-                                                <ul>
-                                                  <li><i class="fa fa-star font-warning"></i></li>
-                                                  <li><i class="fa fa-star font-warning"></i></li>
-                                                  <li><i class="fa fa-star font-warning"></i></li>
-                                                  <li><i class="fa fa-star font-warning"></i></li>
-                                                  <li><i class="fa fa-star font-warning"></i></li>
-                                                </ul>
-                                                <p class="mb-0 f-w-700">Fancy Shirt</p>
-                                                <div class="p f-w-500">$100.00</div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <div class="product-box">
-                                        <div class="media">
-                                          <div class="product-img me-3"><img class="img-fluid" src="frontassets/assets/images/ecommerce/03.jpg" alt="" data-original-title="" title=""></div>
-                                          <div class="media-body">
-                                            <div class="product-details">
-                                              <div>
-                                                <ul>
-                                                  <li><i class="fa fa-star font-warning"></i></li>
-                                                  <li><i class="fa fa-star font-warning"></i></li>
-                                                  <li><i class="fa fa-star font-warning"></i></li>
-                                                  <li><i class="fa fa-star font-warning"></i></li>
-                                                  <li><i class="fa fa-star font-warning"></i></li>
-                                                </ul>
-                                                <p class="mb-0 f-w-700">Fancy Shirt</p>
-                                                <div class="p f-w-500">$100.00</div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
+
+                               </div>
                                 </div>
-                                <div class="product-filter text-center"><img class="img-fluid banner-product" src="frontassets/assets/images/ecommerce/banner.jpg" alt="" data-original-title="" title=""></div>
                               </div>
-                            </div>
-                          </div>
                         </div>
                       </div>
                       <div class="product-search">
-                        <form>
+
                           <div class="form-group m-0">
-                            <input class="form-control" type="search" placeholder="Search.." data-original-title="" title=""><i class="fa fa-search"></i>
+                          <button type="submit" class="btn btn-success">filter</button>
+                            </div>
+                            {{-- <input class="form-control" type="search" placeholder="Search.." data-original-title="" title=""><i class="fa fa-search"></i> --}}
                           </div>
                         </form>
                       </div>
@@ -421,7 +217,6 @@
               </div>
               <div class="product-wrapper-grid">
                 <div class="row">
-                    @if(count($femmes) > 1)
                     @foreach ($femmes as $item)
                     <div class="col-xl-3 col-sm-6 xl-4">
                         <div class="card">
@@ -430,10 +225,9 @@
                             <img class="img" src="{{ asset('fammes/'.$item->image) }}" style="width: 100%;height: 100%;" alt="">
                             <div class="product-hover">
                                 <ul>
-                                    @if ($item->disponible==1)
-                                    <li><a href="cart.html"><i class="icon-shopping-cart"></i></a></li>
+                                    @if ($item->disponible==0 )
+                                       <li><a href="{{ route('front.demande',$item->id) }}"><i class="icon-plus"></i></a></li>
                                     @endif
-                                {{-- < --}}
                                 <li><a data-bs-toggle="modal" data-bs-target="#exampleModalCenter16">
                                     <i class="icon-eye"></i></a>
                                 </li>
@@ -505,6 +299,7 @@
                             <div class="product-details">
 
                                 <a href="product-page.html">
+
                                 <h4>{{ $item->nom }}                                       </h4></a>
                             <p>Disponible:  @if ($item->disponible==1)
                                 Oui
@@ -520,12 +315,7 @@
                     @endforeach
 
 
-                @else
-                <div class="alert alert-warning">
 
-                <strong>Sorry!</strong> No Product Found.
-                </div>
-                @endif
 
 
 

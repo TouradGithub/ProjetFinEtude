@@ -44,7 +44,7 @@ class FemmesController extends Controller
         $famme->lang=$request->lang;
         $famme->enfant=$request->enfant;
         $famme->salaire=$request->salaire;
-        
+
         if($request->has('image'))
         {
             $img = $request->file("image");
@@ -76,7 +76,8 @@ class FemmesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $femme =Femme::find($id);
+        return view('admin.femmes.edit',compact('femme'));
     }
 
     /**
@@ -88,7 +89,35 @@ class FemmesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $femme =Femme::findOrFail($id);
+        //  $request->nom;
+
+
+
+        if($request->has('image'))
+        {
+            $femme->update($request->all());
+            $img = $request->file("image");
+            $filename = time().'.'.$img->getClientOriginalExtension();
+            $path = public_path('fammes/'. $filename);
+            $request->image->move(public_path('fammes/'), $filename);
+            $femme->update([
+                'image'=>$filename
+            ]);
+        }else{
+            $famme->nom=$request->nom;
+            $famme->age=$request->age;
+            $famme->disponible=$request->disponible;
+            $famme->etat=$request->etat;
+            $famme->addrsse=$request->addrsse;
+            $famme->lang=$request->lang;
+            $famme->enfant=$request->enfant;
+            $famme->salaire=$request->salaire;
+            $femme->save();
+        }
+
+     return   redirect()->route('fammes.index');
     }
 
     /**

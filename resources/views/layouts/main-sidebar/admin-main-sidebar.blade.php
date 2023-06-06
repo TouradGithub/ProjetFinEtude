@@ -28,6 +28,18 @@
             </ul>
         </li>
 
+        <li>
+            <a href="javascript:void(0);" data-toggle="collapse" data-target="#Accounts-menu1">
+                <div class="pull-left"><i class="fas fa-money-bill-wave-alt"></i><span
+                        class="right-nav-text">Demande</span></div>
+                <div class="pull-right"><i class="ti-plus"></i></div>
+                <div class="clearfix"></div>
+            </a>
+            <ul id="Accounts-menu1" class="collapse" data-parent="#sidebarnav">
+                <li> <a href="{{route('demande.index')}}"> Liste</a> </li>
+            </ul>
+        </li>
+
 
 
 

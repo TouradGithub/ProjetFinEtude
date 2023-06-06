@@ -89,12 +89,12 @@ header start-->
                     <div class="media">
                         <div class="media-body">
                            <h5 class="mt-0 mb-0">
-                            skjdfk
-                            {{-- {{ Auth::user()->name }} --}}
+
+                            {{ Auth::user()->name }}
                         </h5>
                             <span>
-                                sjefl
-                                {{-- {{ Auth::user()->email }} --}}
+
+                                {{ Auth::user()->email }}
                             </span>
                         </div>
                     </div>

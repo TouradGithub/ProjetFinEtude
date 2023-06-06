@@ -87,6 +87,20 @@ preloader -->
 
                             </div>
 
+                            <div class="section-field mb-20">
+                                <label class="mb-10" for="Password"> NNI   * </label>
+                                <input id="password" type="number"
+                                       class="form-control @error('nni') is-invalid @enderror" name="nni"
+                                       required autocomplete="current-password">
+
+                                @error('nni')
+                                <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                @enderror
+
+                            </div>
+
 
                             <div class="section-field">
                                 <div class="remember-checkbox mb-30">

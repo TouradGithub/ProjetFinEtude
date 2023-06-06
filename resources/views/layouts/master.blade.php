@@ -16,9 +16,9 @@
         <!--=================================
  preloader -->
 
-        <div id="pre-loader">
-            {{-- <img src="{{ URL::asset('assets/images/pre-loader/loader-01.svg') }}" alt=""> --}}
-        </div>
+        {{-- <div id="pre-loader">
+            {{-- <img src="{{ URL::asset('assets/images/pre-loader/loader-01.svg') }}" alt="">
+        </div> --}}
 
         <!--=================================
  preloader -->

@@ -93,7 +93,7 @@ Fammes
                                     <select class="custom-select my-1 mr-sm-2" name="enfant">
                                         <option selected disabled>choisir...</option>
                                         <option value="1">oui</option>
-                                        <option value="0">non</option>
+                                        <option value="2">nom</option>
                                     </select>
                                     @error('enfant')
                                     <div class="alert alert-danger">{{ $message }}</div>
@@ -108,11 +108,7 @@ Fammes
                                 <div class="col">
                                     <label for="title">addrsse</label>
                                     <div class='input-group date'>
-                                        <select class="custom-select my-1 mr-sm-2" name="addrsse">
-                                            <option value="1">Nouakchott sud                                            </option>
-                                            <option  value="2">Nouakchott ouest</option>
-                                            <option  value="3">Nouakchott nord </option>
-                                        </select>
+                                        <input class="form-control" type="text"  name="addrsse"   required>
                                     </div>
                                     @error('addrsse')
                                     <div class="alert alert-danger">{{ $message }}</div>
@@ -124,7 +120,7 @@ Fammes
                                         <option selected disabled>choisir...</option>
 
                                         <option value="1">oui</option>
-                                        <option value="0">non</option>
+                                        <option value="2">nom</option>
 
                                     </select>
                                     @error('disponible')
