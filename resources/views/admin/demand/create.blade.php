@@ -119,8 +119,8 @@ Fammes
                                     <select class="custom-select my-1 mr-sm-2" name="disponible">
                                         <option selected disabled>choisir...</option>
 
-                                        <option value="1">oui</option>
-                                        <option value="2">nom</option>
+                                        <option value="0">oui</option>
+                                        <option value="1">no</option>
 
                                     </select>
                                     @error('disponible')

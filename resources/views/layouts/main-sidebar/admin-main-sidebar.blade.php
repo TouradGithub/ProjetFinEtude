@@ -3,13 +3,13 @@
         <!-- menu item Dashboard-->
         <li>
             <a href="{{ url('/dashboard') }}">
-                <div class="pull-left"><i class="ti-home"></i><span class="right-nav-text">Femme Domicile</span>
+                <div class="pull-left"><i class="ti-home"></i><span class="right-nav-text">Aide a Domicile</span>
                 </div>
                 <div class="clearfix"></div>
             </a>
         </li>
         <!-- menu title -->
-        <li class="mt-10 mb-10 text-muted pl-4 font-medium menu-title">Femme domicile</li>
+        <li class="mt-10 mb-10 text-muted pl-4 font-medium menu-title">Aide a Domicile</li>
 
         <!-- Grades-->
 

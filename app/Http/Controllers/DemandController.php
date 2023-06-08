@@ -28,8 +28,9 @@ class DemandController extends Controller
             $d->active=1;
             $d->save();
             $femme = Femme::find($d->id_femme);
-            $femme->disponible=1;
+            $femme->disponible=0;
             $femme->save();
+            toastr()->success('Demande envoyer!', 'Congrats');
             return redirect()->back();
 
     }

@@ -20,7 +20,7 @@ class AdminController extends Controller
         if (Auth::attempt($credentials)) {
             return redirect()->route('fammes.index');
         }
-
+        toastr()->success('Login ', 'Congrats');
         return redirect()->back()->withSuccess('Login details are not valid');
     }
     public function getLogin(){
@@ -30,7 +30,8 @@ class AdminController extends Controller
     public function logOut() {
         Session::flush();
         Auth::logout();
+        toastr()->success('Deconnexion ', 'Congrats');
         return redirect()->route('getLogin');
     }
- 
+
 }

@@ -68,8 +68,8 @@ Fammes
                                 <div class="col">
                                     <label for="title">Etat</label>
                                     <select class="custom-select my-1 mr-sm-2" name="etat">
-                                        <option @if ($femme->lang=="12H") selected @endif value="12H">12H</option>
-                                        <option @if ($femme->lang=="24H") selected @endif value="24H">24H</option>
+                                        <option @if ($femme->etat=="12H") selected @endif value="12H">12H</option>
+                                        <option @if ($femme->etat=="24H") selected @endif value="24H">24H</option>
                                     </select>
                                     @error('etat')
                                     <div class="alert alert-danger">{{ $message }}</div>
@@ -81,11 +81,11 @@ Fammes
                                 <div class="col">
                                     <label for="title">language :</label>
                                     @foreach ($langs as $item)
-                                    <label class="d-block" for="edo-ani5">
-
-                                      <input class="checkbox_animated" id="lang_{{ $item->id }}" name="lang[{{ $item->id }}]" value="{{ $item->id }}" type="checkbox" data-original-title="" title="">{{ $item->name }}
+                                    <label class="d-block" for="lang_{{ $item->id }}">
+                                        <input class="checkbox_animated" id="lang_{{ $item->id }}" name="lang[]" value="{{ $item->id }}" type="checkbox" data-original-title="" title=""
+                                         >{{ $item->name }}
                                     </label>
-                                  @endforeach
+                                @endforeach
                                     @error('lang')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
