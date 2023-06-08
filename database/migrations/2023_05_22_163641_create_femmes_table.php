@@ -22,7 +22,6 @@ class CreateFemmesTable extends Migration
             $table->string('image')->nullable();
             $table->string('addrsse')->nullable();
             $table->integer('disponible')->nullable();
-            $table->string('lang')->nullable();
             $table->string('enfant')->nullable();
             $table->string('descrption')->nullable();
             $table->timestamps();

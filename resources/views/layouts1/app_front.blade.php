@@ -52,7 +52,7 @@
         <div class="header-wrapper row m-0">
           <div class="header-logo-wrapper col-auto p-0">
             <div class="logo-wrapper"><a href="index.html"><img class="img-fluid" src="{{asset('frontassets/assets/images/logo/logo.png')}} alt=""></a></div>
-          
+
           </div>
           <div class="left-side-header col ps-0 d-none d-md-block">
 
@@ -193,7 +193,11 @@
                                           <label for="javascript">arabic</label>
 
                                         <br><br>
-
+                                        <div class="product-filter pb-0">
+                                            <h6 class="f-w-600">Price</h6>
+                                            <input id="u-range-03" type="text">
+                                            <h6 class="f-w-600">New Products</h6>
+                                          </div>
                                       </div>
                                     </div>
 
@@ -253,7 +257,7 @@
                                         </h6>
                                         </div>
                                         <div class="product-size">
-                                            <ul>
+                                            {{-- <ul>
                                                 <li>
                                                 Salaire: {{ $item->salaire }}
                                                 </li>
@@ -286,7 +290,44 @@
                                                     adresse:
                                                     {{ $item->adresse }}
                                                 </li>
-                                            </ul>
+                                            </ul> --}}
+                                            <table >
+                                                <tbody>
+                                                    <tr>
+                                                        <th>Information</th>
+                                                        <th>Femme domicile</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Salaire</td>
+                                                        <td>{{ $item->salaire }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Bébé</td>
+                                                        <td>
+                                                            @if ($item->enfant == 1)
+                                                                Oui
+                                                            @else
+                                                                No
+                                                            @endif
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Etat</td>
+                                                        <td>{{ $item->etat }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Age</td>
+                                                        <td>{{ $item->age }}</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>Adresse</td>
+                                                        <td>{{ $item->addrsse }}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+
                                         </div>
 
                                     </div>
@@ -322,24 +363,7 @@
 
                 </div>
               </div>
-              <div class="card page-bottom b-r-0">
-                <div class="row">
-                  <div class="col-12 col-sm-6">
-                    <div class="info-block">
-                      <ul class="pagination pagination-primary">
-                        <li class="page-item disabled"><a class="page-link" href="javascript:void(0)" tabindex="-1">Previous</a></li>
-                        <li class="page-item"><a class="page-link" href="javascript:void(0)">1</a></li>
-                        <li class="page-item active"><a class="page-link" href="javascript:void(0)">2 <span class="sr-only">(current)</span></a></li>
-                        <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
-                        <li class="page-item"><a class="page-link" href="javascript:void(0)">Next</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="col-12 col-sm-6 text-end">
-                    <div class="pagination-content"><span class="f-w-600">Showing Products 1 - 24 Of 200 Results</span></div>
-                  </div>
-                </div>
-              </div>
+
             </div>
           </div>
           <!-- Container-fluid Ends-->
@@ -349,7 +373,7 @@
           <div class="container-fluid">
             <div class="row">
               <div class="col-md-12 footer-copyright text-center">
-                <p class="mb-0">Copyright 2023 ©   </p>
+                <p class="mb-0">Nouakchott Sud     37441384</p>
               </div>
             </div>
           </div>

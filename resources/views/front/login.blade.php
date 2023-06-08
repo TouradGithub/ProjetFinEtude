@@ -44,6 +44,10 @@
 
                     <form method="POST" action="{{ route('front.login') }}">
                         @csrf
+                        <div class="section-field mb-20">
+                            <img src="{{ asset('logo.jpg') }}" alt="No image" width="100" height="100" style="margin-left: 40%;border-radius: 30px">
+
+                        </div>
 
                             <div class="section-field mb-20">
                                 <label class="mb-10" for="name">Email*</label>

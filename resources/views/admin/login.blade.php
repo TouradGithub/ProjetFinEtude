@@ -38,12 +38,16 @@
         <div class="container">
             <div class="row justify-content-center no-gutters vertical-align">
 
+
                 <div class="col-lg-4 col-md-6 bg-white">
                     <div class="login-fancy pb-40 clearfix">
 
 
-                    <form method="POST" action="{{ route('loginstore') }}">
-                        @csrf
+                    <form method="POST" action="{{ route('loginstore') }}">  @csrf
+                        <div class="section-field mb-20">
+                            <img src="{{ asset('logo.jpg') }}" alt="No image" width="100" height="100" style="margin-left: 40%;border-radius: 30px">
+
+                        </div>
 
                             <div class="section-field mb-20">
                                 <label class="mb-10" for="name">Email*</label>

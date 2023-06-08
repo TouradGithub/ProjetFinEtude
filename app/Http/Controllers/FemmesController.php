@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Femme;
+use App\Models\langFemme;
 use Illuminate\Http\Request;
 use Image;
 use File;
@@ -35,13 +36,13 @@ class FemmesController extends Controller
      */
     public function store(Request $request)
     {
+        // return $request;
         $famme =new Femme();
         $famme->nom=$request->nom;
         $famme->age=$request->age;
         $famme->disponible=$request->disponible;
         $famme->etat=$request->etat;
         $famme->addrsse=$request->addrsse;
-        $famme->lang=$request->lang;
         $famme->enfant=$request->enfant;
         $famme->salaire=$request->salaire;
 
@@ -53,7 +54,19 @@ class FemmesController extends Controller
             $request->image->move(public_path('fammes/' ), $filename);
             $famme->image = $filename;
         }
+
         $famme->save();
+
+        $lastFemme = Femme::latest()->first();
+        foreach($request->lang as $item){
+            $langFemme =new langFemme();
+            $langFemme->id_femme=$lastFemme->id;
+            $langFemme->id_lang=$item;
+               $langFemme->save();
+        }
+
+
+
      return   redirect()->route('fammes.index');
     }
 
@@ -111,10 +124,17 @@ class FemmesController extends Controller
             $famme->disponible=$request->disponible;
             $famme->etat=$request->etat;
             $famme->addrsse=$request->addrsse;
-            $famme->lang=$request->lang;
             $famme->enfant=$request->enfant;
             $famme->salaire=$request->salaire;
             $femme->save();
+        }
+
+        $lastFemme = Femme::latest()->first();
+        foreach($request->lang as $item){
+            $langFemme =new langFemme();
+            $langFemme->id_femme=$lastFemme->id;
+            $langFemme->id_lang=$item;
+               $langFemme->save();
         }
 
      return   redirect()->route('fammes.index');

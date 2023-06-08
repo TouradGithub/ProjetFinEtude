@@ -92,10 +92,10 @@ class FrontController extends Controller
                 $disponible = $request->disponible;
                 $query->where('disponible',$disponible);
             }
-            if ($request->has('lang')) {
-                $lang = $request->lang;
-                $query->where('lang',$lang);
-            }
+            // if ($request->has('lang')) {
+            //     $lang = $request->lang;
+            //     $query->where('lang',$lang);
+            // }
             if ($request->has('etat')) {
                 $etat = $request->etat;
                 $query->where('etat',$etat);

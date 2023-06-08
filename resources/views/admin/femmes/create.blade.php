@@ -1,4 +1,7 @@
 @extends('layouts.master')
+@php
+    $langs = App\Models\Languages::all();
+@endphp
 @section('css')
     @toastr_css
 @section('title')
@@ -77,19 +80,21 @@ Fammes
 
                             <div class="form-row">
                                 <div class="col">
-                                    <label for="title">lang</label>
-                                    <select class="custom-select my-1 mr-sm-2" name="lang">
-                                        <option selected disabled>choisir...</option>
-                                        <option value="arabic">Arabic</option>
-                                        <option value="francais">Francais</option>
-                                        <option value="english">English</option>
-                                    </select>
+                                    <label for="title">language</label>
+                                    @foreach ($langs as $item)
+                                      <label class="d-block" for="edo-ani5">
+                                        <input class="checkbox_animated" id="lang_{{ $item->id }}" name="lang[{{ $item->id }}]" value="{{ $item->id }}" type="checkbox" data-original-title="" title="">{{ $item->name }}
+                                      </label>
+                                    @endforeach
+
+
+
                                     @error('lang')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                                 <div class="col">
-                                    <label for="title">enfant</label>
+                                    <label for="title">Bébé</label>
                                     <select class="custom-select my-1 mr-sm-2" name="enfant">
                                         <option selected disabled>choisir...</option>
                                         <option value="1">oui</option>
@@ -109,9 +114,9 @@ Fammes
                                     <label for="title">addrsse</label>
                                     <div class='input-group date'>
                                         <select class="custom-select my-1 mr-sm-2" name="addrsse">
-                                            <option value="1">Nouakchott sud                                            </option>
-                                            <option  value="2">Nouakchott ouest</option>
-                                            <option  value="3">Nouakchott nord </option>
+                                            <option value="Nouakchott sud">Nouakchott sud                                            </option>
+                                            <option  value="Nouakchott ouest">Nouakchott ouest</option>
+                                            <option  value="Nouakchott nord">Nouakchott nord </option>
                                         </select>
                                     </div>
                                     @error('addrsse')

@@ -1,4 +1,7 @@
 @extends('layouts.master')
+@php
+    $langs = App\Models\Languages::all();
+@endphp
 @section('css')
     @toastr_css
 @section('title')
@@ -76,19 +79,19 @@ Fammes
 
                             <div class="form-row">
                                 <div class="col">
-                                    <label for="title">lang</label>
-                                    <select class="custom-select my-1 mr-sm-2" name="lang">
-                                        <option selected disabled>choisir...</option>
-                                        <option @if ($femme->lang=="arabic") selected @endif value="arabic">Arabic</option>
-                                        <option @if ($femme->lang=="francais") selected @endif value="francais">Francais</option>
-                                        <option @if ($femme->lang=="english") selected @endif value="english">English</option>
-                                    </select>
+                                    <label for="title">language :</label>
+                                    @foreach ($langs as $item)
+                                    <label class="d-block" for="edo-ani5">
+
+                                      <input class="checkbox_animated" id="lang_{{ $item->id }}" name="lang[{{ $item->id }}]" value="{{ $item->id }}" type="checkbox" data-original-title="" title="">{{ $item->name }}
+                                    </label>
+                                  @endforeach
                                     @error('lang')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                                 <div class="col">
-                                    <label for="title">enfant</label>
+                                    <label for="title">Bébé</label>
                                     <select class="custom-select my-1 mr-sm-2" name="enfant">
                                         <option @if ($femme->enfant==1) selected @endif  value="1">oui</option>
                                         <option  @if ($femme->enfant==0) selected @endif  value="0">non</option>
