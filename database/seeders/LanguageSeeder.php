@@ -13,12 +13,6 @@ class LanguageSeeder extends Seeder
      */
     public function run()
     {
-        $languages = [
-            ['name' => 'English'],
-            ['name' => 'Francais'],
-            ['name' => 'Arabic'],
-        ];
 
-        languages::insert($languages);
     }
 }
