@@ -80,7 +80,7 @@ Fammes
 
                             <div class="form-row">
                                 <div class="col">
-                                    <label for="title">language</label>
+                                    <label for="title">language:</label>
                                     @foreach ($langs as $item)
                                       <label class="d-block" for="edo-ani5">
                                         <input class="checkbox_animated" id="lang_{{ $item->id }}" name="lang[{{ $item->id }}]" value="{{ $item->id }}" type="checkbox" data-original-title="" title="">{{ $item->name }}
