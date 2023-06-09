@@ -30,6 +30,7 @@ Demandes
                                         <tr>
                                             <th>#</th>
                                             <th>Nom User</th>
+                                            <th>Tel User</th>
                                             <th>Nom Femme</th>
                                             <th> Femme Salaire</th>
 
@@ -43,6 +44,7 @@ Demandes
                                             <?php $i++; ?>
                                             <td>{{ $i }}</td>
                                             <td>{{$item->user->name}}</td>
+                                            <td>{{$item->user->tel}}</td>
                                             <td>{{$item->femme->nom}}</td>
                                             <td>{{$item->femme->salaire}}</td>
                                                 <td>

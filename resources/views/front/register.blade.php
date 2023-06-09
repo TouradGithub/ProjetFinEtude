@@ -105,6 +105,19 @@ preloader -->
 
                             </div>
 
+                            <div class="section-field mb-20">
+                                <label class="mb-10" for="Password"> Telephone   * </label>
+                                <input id="password" type="number"
+                                       class="form-control @error('tel') is-invalid @enderror" name="tel"
+                                       required autocomplete="current-password">
+                                @error('tel')
+                                <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                @enderror
+
+                            </div>
+
 
                             <div class="section-field">
                                 <div class="remember-checkbox mb-30">

@@ -10,8 +10,8 @@
     <meta name="description" content="Zeta admin is super flexible, powerful, clean &amp; modern responsive bootstrap 5 admin template with unlimited possibilities.">
     <meta name="keywords" content="admin template, Zeta admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="pixelstrap">
-    <link rel="icon" href="{{asset('frontassets/assets/images/logo/favicon-icon.png')}}" type="image/x-icon">
-    <link rel="shortcut icon" href="{{asset('frontassets/assets/images/logo/favicon-icon.png')}}" type="image/x-icon">
+    <link rel="icon" href="{{asset('logo.jpg')}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('logo.jpg')}}" type="image/x-icon">
     <title>front </title>
     <!-- Google font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -258,40 +258,7 @@
                                         </h6>
                                         </div>
                                         <div class="product-size">
-                                            {{-- <ul>
-                                                <li>
-                                                Salaire: {{ $item->salaire }}
-                                                </li>
-                                                <li>
-                                                enfant:
-                                                    @if ($item->enfant==1)
-                                                    Oui
-                                                @else
-                                                    No
-                                                @endif
 
-                                                </li>
-                                                <li>
-                                                    etat:
-                                                    {{ $item->etat }}
-                                                </li>
-                                            </ul>
-                                            <ul>
-                                                <li>
-                                                Age: {{ $item->age }}
-                                                </li>
-                                                <li>
-                                                enfant:
-                                                {{ $item->lang }}
-
-
-
-                                                </li>
-                                                <li>
-                                                    adresse:
-                                                    {{ $item->adresse }}
-                                                </li>
-                                            </ul> --}}
                                             <table >
                                                 <tbody>
                                                     <tr>
@@ -356,17 +323,12 @@
                     </div>
                     @endforeach
 
-
-
-
-
-
-
                 </div>
               </div>
 
             </div>
           </div>
+          {{-- {!! $femmes->render() !!} --}}
           <!-- Container-fluid Ends-->
         </div>
         <!-- footer start-->

@@ -25,7 +25,7 @@ class FrontController extends Controller
 
     public function index()
     {
-        $femmes=Femme::all();
+        $femmes=Femme::where('disponible',1)->get();
         return view("front.index",compact('femmes'));
     }
 
@@ -51,11 +51,13 @@ class FrontController extends Controller
             'password' => 'required',
             'name' => 'required',
             'nni' => 'required',
+            'tel' => 'required',
         ]);
         $user=new User();
         $user->email=$request->email;
         $user->name=$request->name;
         $user->nni=$request->nni;
+        $user->tel=$request->tel;
         $user->password= Hash::make($request->password);
         $user->save();
         $credentials = $request->only('email', 'password');
