@@ -229,7 +229,7 @@
                             <img class="img" src="{{ asset('fammes/'.$item->image) }}" style="width: 100%;height: 100%;" alt="">
                             <div class="product-hover">
                                 <ul>
-                                    @if ($item->disponible==0 )
+                                    @if ($item->disponible==1 )
                                        <li><a href="{{ route('front.demande',$item->id) }}"><i class="icon-plus"></i></a></li>
                                     @endif
                                 <li><a data-bs-toggle="modal" data-bs-target="#exampleModalCenter16">

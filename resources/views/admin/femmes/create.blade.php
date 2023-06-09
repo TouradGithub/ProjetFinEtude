@@ -129,7 +129,7 @@ Fammes
                                         <option selected disabled>choisir...</option>
 
                                         <option value="1">oui</option>
-                                        <option value="0">non</option>
+                                        <option value="2">non</option>
 
                                     </select>
                                     @error('disponible')
