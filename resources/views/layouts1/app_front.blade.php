@@ -230,6 +230,7 @@
                             <div class="product-hover">
                                 <ul>
                                     @if ($item->disponible==1 )
+
                                        <li><a href="{{ route('front.demande',$item->id) }}"><i class="icon-plus"></i></a></li>
                                     @endif
                                 <li><a data-bs-toggle="modal" data-bs-target="#exampleModalCenter16">
@@ -249,7 +250,7 @@
 
                                         <div class="product-view">
                                         <h6 class="f-w-600">
-                                            Disponible:  @if ($item->disponible==1)
+                                            Disponible: @if ($item->disponible==1)
                                             Oui
                                         @else
                                             No
@@ -295,7 +296,7 @@
                                                 <tbody>
                                                     <tr>
                                                         <th>Information</th>
-                                                        <th>Femme domicile</th>
+                                                        <th>Femme domicile </th>
                                                     </tr>
                                                     <tr>
                                                         <td>Salaire</td>
