@@ -328,6 +328,7 @@
 
             </div>
           </div>
+          {{ $femmes->links() }}
           {{-- {!! $femmes->render() !!} --}}
           <!-- Container-fluid Ends-->
         </div>

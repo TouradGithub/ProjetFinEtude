@@ -8,7 +8,12 @@ use App\Http\Middleware\Authweb;
 use App\Http\Middleware\AutLogin;
 
 
+use App\Http\Controllers\PhoneAuthController;
+Route::get('TestTest',function(){
+return view('test');
+});
 
+Route::get('phone-auth', [PhoneAuthController::class, 'index']);
 
 Route::get('/admin/login', [AdminController::class, 'getLogin'])->name('getLogin');
 Route::get('/admin/logout', [AdminController::class, 'logout'])->name('logoutAdmin');

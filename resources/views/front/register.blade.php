@@ -1,179 +1,139 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
-
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content="HTML5 Template" />
-    <meta name="description" content="Webmin - Bootstrap 4 & Angular 5 Admin Dashboard Template" />
-    <meta name="author" content="potenzaglobalsolutions.com" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>برنامج مورا سوفت لادارة المدارس</title>
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="images/favicon.ico" />
-
-    <!-- Font -->
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Poppins:200,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900">
-
-    <!-- css -->
-    <link href="{{ URL::asset('assets/css/ltr.css') }}" rel="stylesheet">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Front</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-
 <body>
+    <div class="container mt-5" style="max-width: 550px">
+        <div class="alert alert-danger" id="error" style="display: none;"></div>
 
-<div class="wrapper">
-    <!--=================================
-preloader -->
+        <img src="{{ asset('logo.jpg') }}" alt="" style="border-radius: 20px;width: 90px;height: 90px;margin-left: 200px">
+        <h3>Telephone</h3>
+        <div class="alert alert-success" id="successAuth" style="display: none;"></div>
+        <form action="{{ route('front.register') }}" method="POST">
+            @csrf
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Telephone :</label>
+                    <input type="text" id="number" class="form-control" name="tel" placeholder="+222 ********">
+                    <div id="recaptcha-container"></div>
+                    <button type="button" class="btn btn-primary mt-3" onclick="sendOTP();">Send OTP</button>
 
-    <div id="pre-loader">
-        <img src="{{URL::asset('assets/images/pre-loader/loader-01.svg')}}" alt="">
-    </div>
+                </div>
+                <div class="col-md-6">
 
+                    <div class="mb-5 mt-5">
+                        <h5> verification </h5>
+                        <div class="alert alert-success" id="successOtpAuth" style="display: none;"></div>
 
+                            <input type="text" id="verification" class="form-control" placeholder="Verification code">
+                            <button type="button" class="btn btn-danger mt-3" onclick="verify()">Verify code</button>
+                    </div>
 
-    <section class="height-100vh d-flex align-items-center page-section-ptb login"
-             style="background-image: url('{{ asset('assets/images/sativa.png')}}');">
-        <div class="container">
-            <div class="row justify-content-center no-gutters vertical-align">
+                </div>
+            </div>
 
-                <div class="col-lg-4 col-md-6 bg-white">
-                    <div class="login-fancy pb-40 clearfix">
+            <div class="row">
+                <div class="col-md-6">
 
-                    <form method="POST" action="{{ route('front.register') }}">
-                        @csrf
-                        <div class="section-field mb-20">
-                            <img src="{{ asset('logo.jpg') }}" alt="No image" width="100" height="100" style="margin-left: 40%;border-radius: 30px">
-
-                        </div>
-
-                            <div class="section-field mb-20">
-                                <label class="mb-10" for="name">Email*</label>
-                                <input id="email" type="email"
-                                       class="form-control @error('email') is-invalid @enderror" name="email"
-                                       value="{{ old('email') }}" required autocomplete="email" autofocus>
-                                @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                @enderror
-
-                            </div>
-
-                            <div class="section-field mb-20">
-                                <label class="mb-10" for="Password"> Mot de pass * </label>
-                                <input id="password" type="password"
-                                       class="form-control @error('password') is-invalid @enderror" name="password"
-                                       required autocomplete="current-password">
-
-                                @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                @enderror
-
-                            </div>
-
-
-                            <div class="section-field mb-20">
-                                <label class="mb-10" for="Password"> Nom   * </label>
-                                <input id="password" type="text"
-                                       class="form-control @error('name') is-invalid @enderror" name="name"
-                                       required autocomplete="current-password">
-
-                                @error('nom')
-                                <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                @enderror
-
-                            </div>
-
-                            <div class="section-field mb-20">
-                                <label class="mb-10" for="Password"> NNI   * </label>
-                                <input id="password" type="number"
-                                       class="form-control @error('nni') is-invalid @enderror" name="nni"
-                                       required autocomplete="current-password">
-
-                                @error('nni')
-                                <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                @enderror
-
-                            </div>
-
-                            <div class="section-field mb-20">
-                                <label class="mb-10" for="Password"> Telephone   * </label>
-                                <input id="password" type="number"
-                                       class="form-control @error('tel') is-invalid @enderror" name="tel"
-                                       required autocomplete="current-password">
-                                @error('tel')
-                                <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                @enderror
-
-                            </div>
-
-
-                            <div class="section-field">
-                                <div class="remember-checkbox mb-30">
-                                    <input type="checkbox" class="form-control" name="two" id="two" />
-
-                                </div>
-                            </div>
-                            <button class="button"><span>Inscrire</span><i class="fa fa-check"></i></button>
-
-                        </form>
-                        <a href="{{ route('front.getlogin') }}" class="float-right">
-
-                        <button class="button"><span>Login</span><i class="fa fa-check"></i></button>
-                    </a>
+                <div class="mb-5 mt-5">
+                    <h5>Nom</h5>
+                    <div class="alert alert-success" id="successOtpAuth" style="display: none;"></div>
+                        <input type="text"  name="name" class="form-control" placeholder="Nom">
+                </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-5 mt-5">
+                        <h5>NNi</h5>
+                        <div class="alert alert-success" id="successOtpAuth" style="display: none;"></div>
+                            <input type="text" name="nni" class="form-control" placeholder="NNI">
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!--=================================
-login-->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-5 mt-5">
+                        <h5>Mot de passe  </h5>
+                        <div class="alert alert-success" id="successOtpAuth" style="display: none;"></div>
+                            <input type="password"  name="password" class="form-control" placeholder="password ">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-5 mt-5">
+                        <h5>Email</h5>
+                        <div class="alert alert-success" id="successOtpAuth" style="display: none;"></div>
+                            <input type="email"  name="email" class="form-control" placeholder="email">
+                    </div>
+                </div>
+            </div>
 
-</div>
-<!-- jquery -->
-<script src="{{ URL::asset('assets/js/jquery-3.3.1.min.js') }}"></script>
-<!-- plugins-jquery -->
-<script src="{{ URL::asset('assets/js/plugins-jquery.js') }}"></script>
-<!-- plugin_path -->
-<script>
-    var plugin_path = 'js/';
 
-</script>
 
-<!-- chart -->
-<script src="{{ URL::asset('assets/js/chart-init.js') }}"></script>
-<!-- calendar -->
-<script src="{{ URL::asset('assets/js/calendar.init.js') }}"></script>
-<!-- charts sparkline -->
-<script src="{{ URL::asset('assets/js/sparkline.init.js') }}"></script>
-<!-- charts morris -->
-<script src="{{ URL::asset('assets/js/morris.init.js') }}"></script>
-<!-- datepicker -->
-<script src="{{ URL::asset('assets/js/datepicker.js') }}"></script>
-<!-- sweetalert2 -->
-<script src="{{ URL::asset('assets/js/sweetalert2.js') }}"></script>
-<!-- toastr -->
-@yield('js')
-<script src="{{ URL::asset('assets/js/toastr.js') }}"></script>
-<!-- validation -->
-<script src="{{ URL::asset('assets/js/validation.js') }}"></script>
-<!-- lobilist -->
-<script src="{{ URL::asset('assets/js/lobilist.js') }}"></script>
-<!-- custom -->
-<script src="{{ URL::asset('assets/js/custom.js') }}"></script>
 
+
+
+        <button type="submit" class="btn btn-primary mt-3" id="ajouter"
+        style="display: none;"
+        >Ajouter </button>
+
+    </form>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
+
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyBEbRPdcxcHU3HGxLxWe2SmrbXZ-WYSnBc",
+            authDomain: "femmedomicile.firebaseapp.com",
+            databaseURL: "http://127.0.0.1:8000/TestTest",
+            projectId: "femmedomicile",
+            storageBucket: "femmedomicile.appspot.com",
+            messagingSenderId: "654287570852",
+            appId: "1:654287570852:web:7e0b701ee99b19b7ac2331"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script type="text/javascript">
+        window.onload = function () {
+            render();
+        };
+        function render() {
+            window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
+            recaptchaVerifier.render();
+        }
+        function sendOTP() {
+            var number = $("#number").val();
+            firebase.auth().signInWithPhoneNumber(number, window.recaptchaVerifier).then(function (confirmationResult) {
+                window.confirmationResult = confirmationResult;
+                coderesult = confirmationResult;
+                console.log(coderesult);
+                $("#successAuth").text("Message sent");
+                $("#successAuth").show();
+            }).catch(function (error) {
+                $("#error").text(error.message);
+                $("#error").show();
+            });
+        }
+        function verify() {
+            var code = $("#verification").val();
+            coderesult.confirm(code).then(function (result) {
+                var user = result.user;
+                console.log(user);
+                $("#successOtpAuth").text("Auth is successful");
+                $("#successOtpAuth").show();
+                $("#ajouter").css("display", "block");
+
+            }).catch(function (error) {
+                $("#error").text(error.message);
+                $("#error").show();
+            });
+        }
+    </script>
 </body>
-
 </html>

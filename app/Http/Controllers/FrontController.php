@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Session;
 use Hash;
 use App\Models\Demand;
+use Illuminate\Support\Facades\DB;
 use App\Models\Femme;
 class FrontController extends Controller
 {
@@ -25,7 +26,8 @@ class FrontController extends Controller
 
     public function index()
     {
-        $femmes=Femme::where('disponible',1)->get();
+        $femmes=  DB::table('femmes')->where('disponible',1)->paginate(1);
+        // $femmes=Femme::where('disponible',1)->get();
         return view("front.index",compact('femmes'));
     }
 
@@ -53,6 +55,7 @@ class FrontController extends Controller
             'nni' => 'required',
             'tel' => 'required',
         ]);
+
         $user=new User();
         $user->email=$request->email;
         $user->name=$request->name;
@@ -60,9 +63,9 @@ class FrontController extends Controller
         $user->tel=$request->tel;
         $user->password= Hash::make($request->password);
         $user->save();
-        $credentials = $request->only('email', 'password');
+        // $credentials = $request->only('email', 'password');
 
-        return redirect()->route('front.index');
+        return redirect()->route('front.getlogin');
 
     }
 
