@@ -116,7 +116,7 @@
             <div class="page-title">
               <div class="row">
                 <div class="col-12 col-sm-6">
-                  <h3>liste des femmes de menage</h3>
+                  <h3>liste des femmes de Ménage</h3>
                 </div>
 
               </div>
