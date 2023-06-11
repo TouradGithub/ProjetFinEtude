@@ -51,32 +51,7 @@ header start-->
 
             </div>
         </li>
-        <li class="nav-item dropdown ">
-            <a class="nav-link top-nav" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                aria-expanded="true"> <i class=" ti-view-grid"></i> </a>
-            <div class="dropdown-menu dropdown-menu-right dropdown-big">
-                <div class="dropdown-header">
-                    <strong>Quick Links</strong>
-                </div>
-                <div class="dropdown-divider"></div>
-                <div class="nav-grid">
-                    <a href="#" class="nav-grid-item"><i class="ti-files text-primary"></i>
-                        <h5>New Task</h5>
-                    </a>
-                    <a href="#" class="nav-grid-item"><i class="ti-check-box text-success"></i>
-                        <h5>Assign Task</h5>
-                    </a>
-                </div>
-                <div class="nav-grid">
-                    <a href="#" class="nav-grid-item"><i class="ti-pencil-alt text-warning"></i>
-                        <h5>Add Orders</h5>
-                    </a>
-                    <a href="#" class="nav-grid-item"><i class="ti-truck text-danger "></i>
-                        <h5>New Orders</h5>
-                    </a>
-                </div>
-            </div>
-        </li>
+      
         <li class="nav-item dropdown mr-30">
             <a class="nav-link nav-pill user-avatar" data-toggle="dropdown" href="#" role="button"
                 aria-haspopup="true" aria-expanded="false">
