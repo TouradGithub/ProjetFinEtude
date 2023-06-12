@@ -26,7 +26,7 @@ class FrontController extends Controller
 
     public function index()
     {
-        $femmes=  DB::table('femmes')->where('disponible',1)->paginate('');
+        $femmes=  DB::table('femmes')->where('disponible',1)->paginate(4);
         // $femmes=Femme::where('disponible',1)->get();
         return view("front.index",compact('femmes'));
     }
